@@ -25,21 +25,21 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-// const corsOptions = {
-//   origin: "http://localhost:5173", // Frontend origin
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   credentials: true, // Include this to allow cookies if needed
-// };
+const corsOptions = {
+  origin: "https://medical-directory.netlify.app", // Frontend origin
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true, // Include this to allow cookies if needed
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//   })
+// );
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
