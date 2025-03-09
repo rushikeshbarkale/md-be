@@ -180,7 +180,8 @@ const processQuery = async (req, res) => {
     const isLocal = process.env.ENV_TYPE === "local";
     const pythonServiceUrl = isLocal
       ? "http://127.0.0.1:5000/process_query" // Local URL
-      : "http://python_service:5000/process_query"; // Docker URL
+      : // : "http://python_service:5000/process_query"; // Docker URL
+        "https://md-be-python.onrender.com/process_query"; // Render URL
 
     console.log("current url", pythonServiceUrl);
 
@@ -269,7 +270,8 @@ const testPython = async (req, res) => {
     const isLocal = process.env.ENV_TYPE === "local";
     const pythonServiceUrl = isLocal
       ? "http://127.0.0.1:5000/python" // Local URL
-      : "http://python_service:5000/python"; // Docker URL
+      : // : "http://python_service:5000/python"; // Docker URL
+        "https://md-be-python.onrender.com/python"; // Render URL
 
     console.log("current url", pythonServiceUrl);
 
@@ -319,7 +321,8 @@ const testDocker = async (req, res) => {
     const isLocal = process.env.ENV_TYPE === "local";
     const pythonServiceUrl = isLocal
       ? "http://127.0.0.1:5000/docker" // Local URL
-      : "http://python_service:5000/docker"; // Docker URL
+      : // : "http://python_service:5000/docker"; // Docker URL
+        "https://md-be-python.onrender.com/docker"; // Render URL
 
     console.log("current url", pythonServiceUrl);
 
